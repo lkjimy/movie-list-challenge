@@ -72,7 +72,6 @@ export default {
       Object.assign(options.params, params)
 
       const response = await axios.get("https://omdbapi.com/?", options)
-      console.log(response)
 
       return response.data
     },
@@ -90,8 +89,6 @@ export default {
 
       this.getMovies(params)
         .then((response) => {
-          console.log(response)
-
           this.movies = [...this.movies, ...response.Search]
           this.totalResults = response.totalResults
         })
